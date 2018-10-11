@@ -1,12 +1,56 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>NumberGuesser</title>
+  <meta charset="UTF-8">
+  <title>Number Guesser</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div>
-    div
+  <!-- left side -->
+  <section id="left">
+    <div id="innerleft">
+    <h1><span>NUMBER</span>GUESSER</h1>
+      <!-- min range -->
+      <div class="inline">
+        <label>min range</label>
+        <br>
+        <input type="number" id="min-range" name="min_range">
+        <p >enter min range</p>
+      </div>
+      <!-- max range -->
+      <div class="inline">
+        <label>max range</label>
+        <br>
+        <input type="number" id="max-range" name="max_range">
+        <p>enter max range</p>
+      </div>
+      <div class="inline">
+        <button id="update" class="button">update</button>
+      </div>
+      <hr>
+      <!-- bottom half of the left -->
+      <p>the current range is <span id="visible-min">1</span> to <span id="visible-max">100</span></p>
+      <label>Guess</label>
+      <input type="number" id="guess">
+      <button id="submit" class="button">submit guess</button>
+      <div class="inline">
+      <!-- bottom buttons -->
+      <div id="flexcr">
+        <button id="clear" class="button">clear</button>
+        <button id="reset"  class="button">reset</button>
+      </div>
   </div>
-
+</div>
+  </section>
+  <!-- right side -->
+  <section id="right">
+    <div class="vertical">
+      <p id="you-guess">you guessed:</p>
+      <p id="number-guessed">25</p>
+      <p id="response">sorry, that is too high</p>
+    </div>
+  </section>
+  <script type="text/javascript" src="javascript/javascript.js">
+  </script>
 </body>
 </html>
