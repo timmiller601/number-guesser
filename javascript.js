@@ -12,6 +12,7 @@ var numShow = document.querySelector('#number-guessed');
 var currentMaxRange = 110;
 var currentMinRange = 1;
 ​
+
 //change html look
 document.querySelector("#visible-max").innerText = currentMaxRange;
 document.querySelector("#visible-min").innerText = currentMinRange;
