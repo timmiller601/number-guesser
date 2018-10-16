@@ -1,56 +1,63 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Number Guesser</title>
+  <title>NumberGuesser</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <!-- left side -->
-  <section id="left">
-    <div id="innerleft">
-    <h1><span>NUMBER</span>GUESSER</h1>
-      <!-- min range -->
-      <div class="inline">
-        <label>min range</label>
-        <br>
-        <input type="number" id="min-range" name="min_range">
-        <p >enter min range</p>
-      </div>
-      <!-- max range -->
-      <div class="inline">
-        <label>max range</label>
-        <br>
-        <input type="number" id="max-range" name="max_range">
-        <p>enter max range</p>
-      </div>
-      <div class="inline">
-        <button id="update" class="button">update</button>
-      </div>
-      <hr>
-      <!-- bottom half of the left -->
-      <p>the current range is <span id="visible-min">1</span> to <span id="visible-max">100</span></p>
-      <label>Guess</label>
-      <input type="number" id="guess">
-      <button id="submit" class="button">submit guess</button>
-      <div class="inline">
-      <!-- bottom buttons -->
-      <div id="flexcr">
-        <button id="clear" class="button">clear</button>
-        <button id="reset"  class="button">reset</button>
-      </div>
-  </div>
-</div>
-  </section>
-  <!-- right side -->
-  <section id="right">
-    <div class="vertical">
-      <p id="you-guess">you guessed:</p>
-      <p id="number-guessed">25</p>
-      <p id="response">sorry, that is too high</p>
+  <!-- Header -->
+  <header>
+    <h1>NumberGuesser</h1>
+    <h3>Ultimate Challenge Edition</h3>
+  </header>
+<!-- Left Side -->
+<section id="left">
+  <article class="article">
+    <h4>Set Range</h4>
+    <div class="flex">
+      <div><label>Mid Range</label><br><input type="number" id="min-range"></div>
+      <div><label>Max Range</label><br><input type="number" id="max-range"></div>
+      <button id="update">Update</button>
     </div>
-  </section>
-  <script type="text/javascript" src="javascript/javascript.js">
-  </script>
+  </article>
+  <article class="article">
+    <p>The Current Range is<span id="visible-mid">1</span>to<span id="visible-max">100</span></p>
+    <h4>Challenger 1</h4>
+    <div class="flex">
+      <div><label>Name</label><br><input type="text" id="challenger1"></div>
+      <div><label>Guess</label><br><input type="number" id="guess1"></div>
+    </div>
+    <h4>Challenger 2</h4>
+    <div class="flex">
+      <div><label>Name</label><br><input type="text" id="challenger2"></div>
+     <div><label>Guess</label><br><input type="number" id="guess2"></div>
+    </div>
+    <div class="flex">
+      <button id="submit" disabled>Submit Guess</button>
+      <button id="reset" disabled>Reset Game</button>
+      <button id="clear" disabled>Clear Game</button>
+    </div>
+  </article>
+  <article class ="article">
+    <h4>Latest Score</h4>
+    <div id="left-challenger">
+      <h5>Challenger 1 Name</h5>
+      <p>Current Guess</p>
+      <p>97</p>
+      <p id="response1">Thats too High</p>
+    </div>
+    <div id="right-challenger">
+      <h5>Challenger 2 Name</h5>
+      <p>Current Guess</p>
+      <p>97</p>
+      <p id="response2">Thats too High</p>
+    </div>
+  </article>
+</section>
+<!-- right side -->
+<section id="right">
+</section>
+<script src="javascript.js" type="text/javascript"></script>
 </body>
 </html>
