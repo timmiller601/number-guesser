@@ -1,55 +1,84 @@
-//all the variables
-var randomNum = Math.floor(Math.random() * 100);
+// all variables
+
 var minRange = document.querySelector("#min-range");
 var maxRange = document.querySelector("#max-range");
-var updateButton = document.querySelector("#update");
-var clearButton = document.querySelector("#clear");
-var resetButton = document.querySelector("#reset");
-var response = document.querySelector("#response");
-var submitButton = document.querySelector('#submit');
-var numGuess = document.querySelector('#guess');
-var numShow = document.querySelector('#number-guessed');
-var currentMaxRange = 110;
-var currentMinRange = 1;
-​
+var update = document.querySelector("#update");
+var challenger1Name = document.querySelector("#challenger1");
+var challenger1Guess = document.querySelector("#guess1");
+var challenger2Name = document.querySelector("#challenger2");
+var challenger2Guess = document.querySelector("#guess2");
+var submitGuess = document.querySelector("#submit");
+var resetGame = document.querySelector("#reset");
+var clearGame = document.querySelector("#clear");
+var maxRange = document.querySelector("#visible-max");
+var minRange = document.querySelector("#visible-min");
+var response1 = document.querySelector("#response1");
+var response2 = document.querySelector("#response2");
 
-//change html look
-document.querySelector("#visible-max").innerText = currentMaxRange;
-document.querySelector("#visible-min").innerText = currentMinRange;
-​
-​
-//all the function 
-  function guessTooLow() {
- numGuess.innerText = numGuess;
- response.innerText = 'Sorry, that was too low';
+
+// all functions
+
+function update() {
+  submitGuess.disable = false;
+  min = parseInt(minRange.value) || 1;
+  max = parseInt(maxRange.value) || 100;
+  currentMinRange.innerText = min;
+  currentMaxRange.innerText = max;
+  numberGenerated = newNumber();
 }
-​
-function guessTooHigh() {
- numGuess.innerText = numGuess;
- response.innerText = "Sorry, that was too high";
+
+function newNumber () {
+  return Math.floor(Math.random() *(max - min +1)) + min;
 }
-​
-function guessRight() {
- numGuess.innerText = numGuess;
- response.innerText = "BOOM";
+
+function clear () {
+  return challenger1Guess = "";
+  return challenger2Guess = "";
 }
-​
-//the event listener
-submitButton.addEventListener('click', function () {
- numberDisplay = numGuess.value;
- numShow.innerText=numberDisplay;
-   if ( numberDisplay > randomNum ) {
-  guessTooHigh();
- }else if ( numberDisplay < randomNum ) {
-  guessTooLow()
- }else {
-  guessRight()
- };
-});
-​
-​
-( minmax === null && minmax > maxmax)
-​
+
+
+function difficulty (n) {
+  max += n; 
+  min -= n;
+  currentMinRange.innerText = min;
+  currentMaxRange.innerText = max; 
+}
+
+function submit() {
+  clearGame.disabled = false;
+  resetGame.disabled = false;
+  player1();
+  player2();
+  }
+
+function player1 (){
+  if (numberGenerated > challenger1Guess){
+    response1.innerText = "Sorry, that was too low";
+  }else if (numberGenerated < challenger1Guess){
+    response1.innerText = "Sorry, that was too high";
+  }else {
+    winnerBox(challenger1Name);
+  }
+}
+
+function player2 (){
+  if (numberGenerated > challenger2Guess){
+    response2.innerText = "Sorry, that was too low";
+  }else if (numberGenerated < challenger2Guess){
+    response2.innerText = "Sorry, that was too high";
+  }else {
+    winnerBox(challenger2Name);
+  }
+}
+
+// Event Listeners
+
+update.addEventListener('click', update);
+clearGame.addEventListener('click', clear);
+submitGuess.addEventListener('click', submit);
+
+
+
 ​
 ​
  
