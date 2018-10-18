@@ -1,78 +1,255 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  height: 100%;
+.main {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-/*header*/
+@media (max-width: 850px){
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+html, body {
+ margin: 0;
+ padding: 0;
+ font-family: 'Open Sans', sans-serif;
+ height: 100%;
+}
 
 header {
-  background-color: #404041;
-  text-align: center;
-  color: #DD1972;
-  height: 100px;
+ align-self: center;
+ background-color: #404041;
+ text-align: center;
+ color: #DD1972;
+ width: 100%;
+ height: 150px;
 }
 
 h1 {
-  padding-top: 15px;
-  margin-top: 0px;
+ padding-top: 15px;
+ margin-top: 0px;
+ font-size: 4em;
+ margin-bottom: 0px;
+ font-weight: 700;
+}
+
+#h1 {
+  font-weight: 300;
 }
 
 h3 {
-  margin-bottom: 0px;
+ color: #FFFFFF;
+ display: inline;
+ margin-bottom: 20px;
+ font-size: 20px;
+ font-weight: normal;
 }
 
+.no-space {
+  letter-spacing: -2px;
+}
 
-/*left side*/
+@media (max-width: 850px){
+  h1 {
+    display: none;
+  }
+
+}
 
 #left {
-  float: left;
-  background-color: #F7F7F7;
-  width: 50%;
-  height: 100%;
+ background-color: #F7F7F7;
+ flex: 1;
+ min-width: 50vw;
+ height: 125%; 
 }
 
-.article {
-  background-color: #ffffff;
-  border: 2px solid #D0D2D3;
-  margin: 20px 20px;
-  padding: 20px;
-  content: ' ';
-  display: table;
-  clear: both;
-  width: 42.5vw;
+@media (max-width: 750px){
+  #left {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.article { 
+ background-color: #ffffff;
+ border: 2px solid #D0D2D3;
+ margin: 20px 20px;
+ padding: 20px;
+ content: ' ';
+ display: table;
+ clear: both;
+ width: 42.5vw;
+}
+
+@media (max-width: 850px){
+  .article {
+    display: table;
+    width: 85%;
+  }
 }
 
 .flex {
-  display: flex;
-  justify-content: space-around;
+ display: flex;
+ justify-content: space-between;
+ margin: 10px auto 10px auto;
+}
+
+@media (max-width: 850px){
+  .flex {
+    display: table;
+    width: 4vw;
+
+  }
 }
 
 #right-challenger {
-  float: right;
+ float: right;
 }
 
 #left-challenger {
-  float: left;
+ float: left;
+}
+
+.top-line {
+  padding-left: 35%;
+}
+
+@media (max-width: 850px;) {
+  .btm-winner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 h4 {
-  color: #404041;
+ color: #404041;
+ font-size: 20px;
+ margin: 0px;
 }
 
 label {
-  color: #E6E6E6;
+ color: #404041;
 }
 
-/*right side*/
+button {
+  border: none;
+  background-color: #6E6E6E;
+  border-radius: 40px;
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+}
+
+button:disabled {
+ background-color: #D0D2D3;
+}
+
+button:hover {
+ background-color: #DD1972;
+}
+
+input {
+  width: 10vw;
+  height: 30px;
+  font-size: 20px;
+}
+
+.visible {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#vertical-line {
+  border-left: 2px solid black
+  height: 50px;
+
+}
+
+.name {
+  width: 30vw;
+}
+
+.bottom {
+  text-align: center;
+}
+
+.numberguess {
+  color: #DD1972;
+  font-size: 40px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+h5 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 25px;
+}
 
 #right {
-  float: right;
-  height: 100%;
-  width: 50%;
-  background-color: #D1D2D4;
-  overflow: scroll;
+ flex: 1;
+ border-left: 2px solid #6E6E6E;
+ background-color: #D1D2D4;
+ overflow: scroll;
 }
+
+#del-button {
+  border-radius: 100%;
+  padding: 1px 9px 3px 9px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  float: right;
+}
+
+#main-div {
+  text-transform: capitalize;
+  background-color: #FFFFFF;
+  color: #6E6E6E;
+  border: 2px solid #6E6E6E;
+  width: 40vw;
+  text-align: center;
+  margin: 20px auto 20px auto;
+  animation-name: animation;
+  animation-duration: 1s;
+}
+
+#middle-div {
+  text-transform: capitalize;
+  font-size: 20px;
+  border-top: 2px solid #D0D2D3;
+  border-bottom: 2px solid #D0D2D3;
+  width: 30vw;
+  margin: auto;
+}
+
+@keyframes animation {
+  0% {
+    transform: perspective(500px) rotateY(-1turn);
+    animation-timing-function: ease-out;
+  }
+  40% {
+    transform: perspective(500px) translateZ(150px) rotateY(-190deg);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: perspective(500px) translateZ(150px) rotateY(-170deg);
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: perspective(500px) scale3d(.95, .95, .95);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: perspective(500px);
+    animation-timing-function: ease-in;
+  }
+}
+
+
+
+
 
 
